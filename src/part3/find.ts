@@ -1,3 +1,4 @@
+import { fail, ok } from "node:assert";
 import { Result, makeFailure, makeOk, bind, either } from "../lib/result";
 
 /* Library code */
@@ -8,7 +9,9 @@ const findOrThrow = <T>(pred: (x: T) => boolean, a: T[]): T => {
     throw "No element found.";
 }
 
-export const findResult = undefined;
+export const findResult = <T>(pred: (x: T) => boolean, a: T[]) => {
+    return a.some(pred) ? ok : fail;
+};
 
 /* Client code */
 const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
@@ -19,7 +22,7 @@ const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
         return -1;
     }
 }
-
+ 
 export const returnSquaredIfFoundEven_v2 = undefined;
 
 export const returnSquaredIfFoundEven_v3 = undefined;
