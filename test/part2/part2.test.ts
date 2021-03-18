@@ -22,5 +22,21 @@ describe("Assignment 1 Part 2", () => {
         it("returns false when the parens are not paired", () => {
             expect(isPaired("(]")).to.be.false;
         });
+
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("")).to.be.true;
+        });
+
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("(")).to.be.false;
+        });
+
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("(")).to.be.false;
+        });
+
+        it("returns true for a string with paired parens", () => {
+            expect(isPaired("({)}")).to.be.false;
+        });
     });
 });
