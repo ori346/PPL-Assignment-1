@@ -2,15 +2,14 @@ import * as R from "ramda";
 
 const stringToArray = R.split("");
 
-let v: { [key: string]: boolean } = {
+let vowels: { [key: string]: boolean } = {
     'a': true, 'e': true, 'o': true, 'u': true, 'i': true, 'A': true, 'E': true, 'I': true, 'O': true, 'U': true
 }
 
-const isVow = (char: string): boolean => v[char];
 
 /* Question 1 */
 export const countVowels = function (str: string): number {
-    return stringToArray(str).filter(isVow).length;
+    return stringToArray(str).filter((char: string): boolean => vowels[char]).length;
 };
 
 
@@ -63,10 +62,10 @@ export const isPaired = function (str: string): boolean {
         if (acc[0] === 'f')
             return ['f']
         if (open[char])
-            return [...acc, char]
-        let last = acc.pop();
+            return [char,...acc]
+        let last = acc[0];
         if (last === undefined || matching[last] !== char)
             return ['f']
-        return acc;
+        return acc.slice(1);
     }, []).length === 0;
 };
