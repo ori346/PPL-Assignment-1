@@ -55,6 +55,8 @@ let isParentheses: { [key: string]: boolean } = {
     ')': true
 }
 
+
+
 /* Question 3 */
 export const isPaired = function (str: string): boolean {
     let w: string[] = R.filter((char:string):boolean => isParentheses[char], stringToArray(str));
