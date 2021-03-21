@@ -36,6 +36,10 @@ describe("Assignment 1 Part 2", () => {
         });
 
         it("returns true for a string with paired parens", () => {
+            expect(isPaired("}()")).to.be.false;
+        });
+
+        it("returns true for a string with paired parens", () => {
             expect(isPaired("({)}")).to.be.false;
         });
     });

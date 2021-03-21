@@ -31,5 +31,5 @@ export const returnSquaredIfFoundEven_v2 = (a: number[]):Result<number> =>
 
 
 
-export const returnSquaredIfFoundEven_v3 = (a: number[]):Result<number> | number =>
-    either(findResult(x => x % 2 === 0, a), (value => value*value) , message => -1);
+export const returnSquaredIfFoundEven_v3 = (a: number[]):number =>
+    either(findResult(x => x % 2 === 0, a), value => value*value , message => -1);
