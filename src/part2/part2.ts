@@ -2,7 +2,7 @@ import * as R from "ramda";
 
 const stringToArray = R.split("");
 
-let vowels: { [key: string]: boolean } = {
+const vowels: { [key: string]: boolean } = {
     'a': true, 'e': true, 'o': true, 'u': true, 'i': true, 'A': true, 'E': true, 'I': true, 'O': true, 'U': true
 }
 
@@ -34,19 +34,19 @@ const letterCountToPhrase = (accumulatedPhrase: string, letterCount: LetterCount
 export const runLengthEncoding = (input: string): string => accumulateReversedLetterCounts(input).reduceRight(letterCountToPhrase, "")
 //because the accumulate return the letters in reverse order reduce the array in reverse order
 
-let matching: { [key: string]: string } = {
+const matching: { [key: string]: string } = {
     '{': '}',
     '[': ']',
     '(': ')'
 };
 
-let open: { [key: string]: boolean } = {
+const open: { [key: string]: boolean } = {
     '{': true,
     '[': true,
     '(': true
 }
 
-let isParentheses: { [key: string]: boolean } = {
+const isParentheses: { [key: string]: boolean } = {
     '{': true,
     '}': true,
     '[': true,
