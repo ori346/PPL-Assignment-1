@@ -59,13 +59,13 @@ let isParentheses: { [key: string]: boolean } = {
 
 /* Question 3 */
 export const isPaired = function (str: string): boolean {
-    let w: string[] = R.filter((char:string):boolean => isParentheses[char], stringToArray(str));
+    const w: string[] = R.filter((char:string):boolean => isParentheses[char], stringToArray(str));
     return w.reduce((acc: string[], char: string): string[] => {
         if (acc[0] === 'f') //case of failure
             return ['f']
         if (open[char])
             return [char,...acc] //add the open parentheses to the accumulator and return new accumulator
-        let last = acc[0];
+        const last = acc[0];
         if (last === undefined || matching[last] !== char)
             return ['f'] // case the
         return acc.slice(1);

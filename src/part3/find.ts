@@ -10,7 +10,7 @@ const findOrThrow = <T>(pred: (x: T) => boolean, a: T[]): T => {
 }
 
 export const findResult = <T>(pred: (x: T) => boolean, arr: T[]):Result<T> => {
-    let out:T|undefined = arr.find(pred);
+    const out:T|undefined = arr.find(pred);
     return out ? makeOk(out) : makeFailure("element no found");
 };
 
