@@ -7,10 +7,34 @@ describe("Assignment 1 Part 2", () => {
             expect(countVowels("This is SOME Text")).to.equal(5);
         });
     });
+    
 
+    describe("countVowels_empty", () => {
+        it("counts vowels", () => {
+            expect(countVowels("")).to.equal(0);
+        });
+    });
     describe("runLengthEncoding", () => {
         it("compresses a string", () => {
             expect(runLengthEncoding("aaaabbbccd")).to.equal("a4b3c2d");
+        });
+    });
+
+    describe("runLengthEncoding_empty", () => {
+        it("compresses a string", () => {
+            expect(runLengthEncoding("")).to.equal("");
+        });
+    });
+
+    describe("runLengthEncoding", () => {
+        it("compresses a string", () => {
+            expect(runLengthEncoding("abcdefg")).to.equal("abcdefg");
+        });
+    });
+
+    describe("runLengthEncodingOhad", () => {
+        it("compresses a string", () => {
+            expect(runLengthEncoding("aaaabbbaaa")).to.equal("a4b3a3");
         });
     });
 
@@ -33,10 +57,6 @@ describe("Assignment 1 Part 2", () => {
 
         it("returns true for a string with paired parens", () => {
             expect(isPaired("(")).to.be.false;
-        });
-
-        it("returns true for a string with paired parens", () => {
-            expect(isPaired("}()")).to.be.false;
         });
 
         it("returns true for a string with paired parens", () => {
